@@ -69,7 +69,4 @@ Many thanks to Fayder Florez(https://twitter.com/fayderflorez) for his implement
 
 ## License
 The restcountry GEM is released under the MIT License.
-```
-Copyright (c) 2015 Davide Santangelo
-
 
