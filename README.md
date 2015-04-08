@@ -1,6 +1,6 @@
 # Restcountry
 
-This is a sample gem to wrap REST Countries API
+This is a sample gem to wrap REST Countries API http://restcountries.eu
 
 ## Installation
 
