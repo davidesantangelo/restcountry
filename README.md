@@ -65,7 +65,7 @@ currencies,
 languages
 
 ### Credits
-Many thanks to Fayder Florez for his implementation of the API.
+Many thanks to Fayder Florez(https://twitter.com/fayderflorez) for his implementation of the API.
 
 ## License
 The restcountry GEM is released under the MIT License.
