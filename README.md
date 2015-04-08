@@ -40,6 +40,30 @@ country.callingCodes
 #=> "39"
 
 ```
+## List of all attributes
+
+name, 
+capital, 
+altSpellings, 
+relevance, 
+region, 
+subregion, 
+translations, 
+population, 
+latlng, 
+demonym, 
+area, 
+gini, 
+timezones, 
+borders, 
+nativeName, 
+callingCodes, 
+topLevelDomain, 
+alpha2Code, 
+alpha3Code, 
+currencies, 
+languages
+
 ## License
 The restcountry GEM is released under the MIT License.
 ```
