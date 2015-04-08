@@ -64,7 +64,7 @@ alpha3Code,
 currencies, 
 languages
 
-### Credits
+## Credits
 Many thanks to Fayder Florez(https://twitter.com/fayderflorez) for his implementation of the API.
 
 ## License
