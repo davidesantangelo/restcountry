@@ -23,7 +23,7 @@ Or install it yourself as:
 ```ruby
 require 'restcountry'
 
-# Find all cauntries
+# Find all countries
 countries = Restcountry::Country.all
 
 # Find a country by name
