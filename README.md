@@ -34,7 +34,7 @@ country.capital
 #=> Rome
 
 country.region
-#=>Europe
+#=> Europe
 
 country.callingCodes
 #=> "39"
