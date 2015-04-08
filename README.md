@@ -35,10 +35,10 @@ country = Restcountry::Country.find('italy')
 country.capital
 #=> Rome
 
-honda.region
+country.region
 #=>Europe
 
-honda.callingCodes
+country.callingCodes
 #=> "39"
 
 ```
