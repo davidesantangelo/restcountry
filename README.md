@@ -40,7 +40,7 @@ country.callingCodes
 #=> "39"
 
 ```
-## List of all attributes
+## Attributes
 
 name, 
 capital, 
