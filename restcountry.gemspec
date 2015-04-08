@@ -9,7 +9,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Davide Santangelo"]
   spec.email         = ["davide.santangelo@gmail.com"]
 
-  spec.summary       = %q{Gem to wrap restcountries.eu API}
+  if spec.respond_to?(:metadata)
+    spec.metadata['allowed_push_host'] = "https://rubygems.org"
+  end
+
+  spec.summary       = %q{Gem to wrap BensBenzes.com API}
   spec.description   = %q{Basic API implementation for REST Countries API http://restcountries.eu}
   spec.homepage      = ""
   spec.license       = "MIT"
