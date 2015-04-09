@@ -6,12 +6,22 @@ describe Restcountry do
   end
 
   it 'get capital Rome from country Italy' do
-   	it = Restcountry::Country.find('Italy')
-   	expect(it.capital).to eq('Rome')
+   	country = Restcountry::Country.find('Italy')
+   	expect(country.capital).to eq('Rome')
   end
 
   it 'get capital Madrid from country Spain' do
-   	spain = Restcountry::Country.find('Spain')
-   	expect(spain.capital).to eq('Madrid')
+   	country = Restcountry::Country.find('Spain')
+   	expect(country.capital).to eq('Madrid')
+  end
+
+  it 'get region Europe from country Ukraine' do
+    country = Restcountry::Country.find('Ukraine')
+    expect(country.region).to eq('Europe')
+  end
+
+  it 'get name Estonia from capital Tallinn' do
+    country = Restcountry::Country.find_by_capital('Tallinn')
+    expect(country.capital).to eq('Tallinn')
   end
 end

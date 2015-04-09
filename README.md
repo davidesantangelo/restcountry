@@ -39,6 +39,12 @@ country.region
 country.callingCodes
 #=> "39"
 
+# Find a country by capital
+country = Restcountry::Country.find_by_capital('Rome')
+
+country.name
+#=> Italy
+
 ```
 ## Attributes
 

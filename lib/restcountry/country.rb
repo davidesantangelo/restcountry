@@ -56,6 +56,23 @@ module Restcountry
       response.success? ? new(JSON.parse(response.body).first) : []
     end
 
+    def self.find_by_currency(currency)
+      response = Faraday.get("#{API_URL}/currency/#{currency}")
+      countries = response.success? ? JSON.parse(response.body) : []
+      countries.map { |attributes| new(attributes) }
+    end
+
+    def self.find_by_capital(capital)
+      response = Faraday.get("#{API_URL}/capital/#{capital}")
+      response.success? ? new(JSON.parse(response.body).first) : []
+    end
+
+    def self.find_by_region(region)
+      response = Faraday.get("#{API_URL}/region/#{region}")
+      countries = response.success? ? JSON.parse(response.body) : []
+      countries.map { |attributes| new(attributes) }
+    end
+
     def self.all
       response = Faraday.get("#{API_URL}/all")
       countries = response.success? ? JSON.parse(response.body) : []
