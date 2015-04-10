@@ -24,4 +24,9 @@ describe Restcountry do
     country = Restcountry::Country.find_by_capital('Tallinn')
     expect(country.capital).to eq('Tallinn')
   end
+
+  it 'get name from first country from language it' do
+    countries = Restcountry::Country.find_by_lang('it')
+    expect(countries.first.name).to eq('Italy')
+  end
 end

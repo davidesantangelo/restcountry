@@ -73,6 +73,12 @@ module Restcountry
       countries.map { |attributes| new(attributes) }
     end
 
+    def self.find_by_lang(lang)
+      response = Faraday.get("#{API_URL}/lang/#{lang}")
+      countries = response.success? ? JSON.parse(response.body) : []
+      countries.map { |attributes| new(attributes) }
+    end
+
     def self.all
       response = Faraday.get("#{API_URL}/all")
       countries = response.success? ? JSON.parse(response.body) : []
