@@ -27,7 +27,7 @@ require 'restcountry'
 countries = Restcountry::Country.all
 
 # Find a country by name
-country = Restcountry::Country.find('italy')
+country = Restcountry::Country.find_by_name('italy')
 
 # Access the country's attributes
 country.capital
