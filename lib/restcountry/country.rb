@@ -5,26 +5,26 @@ API_URL = "https://restcountries.eu/rest/v1"
 
 module Restcountry
  	class Country
-    attr_reader :name, 
-                :capital, 
-                :altSpellings, 
-                :relevance, 
-                :region, 
-                :subregion, 
-                :translations, 
-                :population, 
-                :latlng, 
-                :demonym, 
-                :area, 
-                :gini, 
-                :timezones, 
-                :borders, 
-                :nativeName, 
-                :callingCodes, 
-                :topLevelDomain, 
-                :alpha2Code, 
-                :alpha3Code, 
-                :currencies, 
+    attr_reader :name,
+                :capital,
+                :altSpellings,
+                :relevance,
+                :region,
+                :subregion,
+                :translations,
+                :population,
+                :latlng,
+                :demonym,
+                :area,
+                :gini,
+                :timezones,
+                :borders,
+                :nativeName,
+                :callingCodes,
+                :topLevelDomain,
+                :alpha2Code,
+                :alpha3Code,
+                :currencies,
                 :languages
 
     def initialize(attributes)
@@ -56,6 +56,10 @@ module Restcountry
       response.success? ? new(JSON.parse(response.body).first) : []
     end
 
+    def self.find_by_name(name)
+      find(name)
+    end
+
     def self.find_by_currency(currency)
       response = Faraday.get("#{API_URL}/currency/#{currency}")
       countries = response.success? ? JSON.parse(response.body) : []
@@ -75,6 +79,12 @@ module Restcountry
 
     def self.find_by_lang(lang)
       response = Faraday.get("#{API_URL}/lang/#{lang}")
+      countries = response.success? ? JSON.parse(response.body) : []
+      countries.map { |attributes| new(attributes) }
+    end
+
+    def self.find_by_callingcode(callingcode)
+      response = Faraday.get("#{API_URL}/callingcode/#{callingcode}")
       countries = response.success? ? JSON.parse(response.body) : []
       countries.map { |attributes| new(attributes) }
     end
