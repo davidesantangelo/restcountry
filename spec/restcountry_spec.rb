@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'vcr'
 
 describe Restcountry do
-  
   it 'get a response from api' do
     VCR.use_cassette 'find_by_name' do
       result = Restcountry::Country.all

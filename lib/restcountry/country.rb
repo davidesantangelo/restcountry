@@ -52,7 +52,7 @@ module Restcountry
     end
 
     def self.find(name)
-      response = Faraday.get("#{API_URL}/name/#{name}")
+      response = get_response('name', name)
       response.success? ? new(JSON.parse(response.body).first) : []
     end
 
@@ -61,38 +61,42 @@ module Restcountry
     end
 
     def self.find_by_currency(currency)
-      response = Faraday.get("#{API_URL}/currency/#{currency}")
+      response = get_response('currency', currency)
       countries = response.success? ? JSON.parse(response.body) : []
       countries.map { |attributes| new(attributes) }
     end
 
     def self.find_by_capital(capital)
-      response = Faraday.get("#{API_URL}/capital/#{capital}")
+      response = get_response('capital', capital)
       response.success? ? new(JSON.parse(response.body).first) : []
     end
 
     def self.find_by_region(region)
-      response = Faraday.get("#{API_URL}/region/#{region}")
+      response = get_response('region', region)
       countries = response.success? ? JSON.parse(response.body) : []
       countries.map { |attributes| new(attributes) }
     end
 
     def self.find_by_lang(lang)
-      response = Faraday.get("#{API_URL}/lang/#{lang}")
+      response = get_response('lang', lang)
       countries = response.success? ? JSON.parse(response.body) : []
       countries.map { |attributes| new(attributes) }
     end
 
     def self.find_by_callingcode(callingcode)
-      response = Faraday.get("#{API_URL}/callingcode/#{callingcode}")
+      response = get_response('callingcode', callingcode)
       countries = response.success? ? JSON.parse(response.body) : []
       countries.map { |attributes| new(attributes) }
     end
 
     def self.all
-      response = Faraday.get("#{API_URL}/all")
+      response = get_response('all')
       countries = response.success? ? JSON.parse(response.body) : []
       countries.map { |attributes| new(attributes) }
+    end
+  private
+    def self.get_response(api, action=nil)
+      Faraday.get("#{API_URL}/#{api.to_s}/#{action}")
     end
   end
 end
