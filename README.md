@@ -27,7 +27,7 @@ require 'restcountry'
 countries = Restcountry::Country.all
 
 # Find a country by name
-country = Restcountry::Country.find('italy')
+country = Restcountry::Country.find_by_name('italy')
 
 # Access the country's attributes
 country.capital
@@ -71,7 +71,7 @@ currencies,
 languages
 
 ## Credits
-Many thanks to Fayder Florez(https://twitter.com/fayderflorez) for his implementation of the API.
+Many thanks to Fayder Florez for his implementation of the API.
 
 ## License
 The restcountry GEM is released under the MIT License.
