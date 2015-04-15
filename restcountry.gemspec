@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
     spec.metadata['allowed_push_host'] = "https://rubygems.org"
   end
 
-  spec.summary       = %q{Gem to wrap BensBenzes.com API}
+  spec.summary       = %q{Gem to wrap restcountries.eu API}
   spec.description   = %q{Basic API implementation for REST Countries API http://restcountries.eu}
   spec.homepage      = "https://github.com/davidesantangelo/restcountry"
   spec.license       = "MIT"
