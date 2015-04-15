@@ -52,8 +52,8 @@ module Restcountry
     end
 
     def self.find(name)
-      response = get_response('name', name)
-      response.success? ? new(JSON.parse(response.body).first) : []
+      countries = get_response('name', name)
+      new(countries.first) unless countries.empty?
     end
 
     def self.find_by_name(name)
@@ -61,42 +61,43 @@ module Restcountry
     end
 
     def self.find_by_currency(currency)
-      response = get_response('currency', currency)
-      countries = response.success? ? JSON.parse(response.body) : []
+      countries = get_response('currency', currency)
       countries.map { |attributes| new(attributes) }
     end
 
     def self.find_by_capital(capital)
-      response = get_response('capital', capital)
-      response.success? ? new(JSON.parse(response.body).first) : []
+      countries = get_response('capital', capital)
+      new(countries.first) unless countries.empty?
     end
 
     def self.find_by_region(region)
-      response = get_response('region', region)
-      countries = response.success? ? JSON.parse(response.body) : []
+      countries = get_response('region', region)
+      countries.map { |attributes| new(attributes) }
+    end
+
+    def self.find_by_subregion(subregion)
+      countries = get_response('subregion', subregion)
       countries.map { |attributes| new(attributes) }
     end
 
     def self.find_by_lang(lang)
-      response = get_response('lang', lang)
-      countries = response.success? ? JSON.parse(response.body) : []
+      countries = get_response('lang', lang)
       countries.map { |attributes| new(attributes) }
     end
 
     def self.find_by_callingcode(callingcode)
-      response = get_response('callingcode', callingcode)
-      countries = response.success? ? JSON.parse(response.body) : []
+      countries = get_response('callingcode', callingcode)
       countries.map { |attributes| new(attributes) }
     end
 
     def self.all
-      response = get_response('all')
-      countries = response.success? ? JSON.parse(response.body) : []
+      countries = get_response('all')
       countries.map { |attributes| new(attributes) }
     end
   private
     def self.get_response(api, action=nil)
-      Faraday.get("#{API_URL}/#{api.to_s}/#{action}")
+      response = Faraday.get(URI.parse(URI.encode("#{API_URL}/#{api.to_s}/#{action}")))
+      return response.success? ? JSON.parse(response.body) : []
     end
   end
 end

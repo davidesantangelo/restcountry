@@ -55,4 +55,11 @@ describe Restcountry do
       expect(countries.first.name).to eq('Italy')
     end
   end
+
+  it 'get name Armenia from first country of subregion "western asia"' do
+    VCR.use_cassette 'find_by_subregion' do
+      countries = Restcountry::Country.find_by_subregion('western asia')
+      expect(countries.first.name).to eq('Armenia')
+    end
+  end
 end
