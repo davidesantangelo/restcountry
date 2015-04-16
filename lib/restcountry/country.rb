@@ -1,5 +1,6 @@
 require 'faraday'
 require 'json'
+require 'uri'
 
 API_URL = "https://restcountries.eu/rest/v1"
 
