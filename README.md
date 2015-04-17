@@ -46,6 +46,7 @@ country.name
 #=> Italy
 
 countries = Restcountry::Country.find_by_lang('it')
+
 countries.first
 #=> Italy
 
