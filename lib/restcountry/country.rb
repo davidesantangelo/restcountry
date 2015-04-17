@@ -2,7 +2,7 @@ require 'faraday'
 require 'json'
 require 'uri'
 
-API_URL = "https://restcountries.eu/rest/v1"
+API_URL = 'https://restcountries.eu/rest/v1'
 
 module Restcountry
  	class Country
@@ -29,27 +29,27 @@ module Restcountry
                 :languages
 
     def initialize(attributes)
-      @name = attributes["name"]
-      @capital = attributes["capital"]
-      @altSpellings = attributes["altSpellings"]
-      @relevance = attributes["relevance"]
-      @region = attributes["region"]
-      @subregion = attributes["subregion"]
-      @translations = attributes["translations"]
-      @population = attributes["population"]
-      @latlng = attributes["latlng"]
-      @demonym = attributes["demonym"]
-      @area = attributes["area"]
-      @gini = attributes["gini"]
-      @timezones = attributes["timezones"]
-      @borders = attributes["borders"]
-      @nativeName = attributes["nativeName"]
-      @callingCodes = attributes["callingCodes"]
-      @topLevelDomain = attributes["topLevelDomain"]
-      @alpha2Code = attributes["alpha2Code"]
-      @alpha3Code = attributes["alpha3Code"]
-      @currencies = attributes["currencies"]
-      @languages = attributes["languages"]
+      @name = attributes['name']
+      @capital = attributes['capital']
+      @altSpellings = attributes['altSpellings']
+      @relevance = attributes['relevance']
+      @region = attributes['region']
+      @subregion = attributes['subregion']
+      @translations = attributes['translations']
+      @population = attributes['population']
+      @latlng = attributes['latlng']
+      @demonym = attributes['demonym']
+      @area = attributes['area']
+      @gini = attributes['gini']
+      @timezones = attributes['timezones']
+      @borders = attributes['borders']
+      @nativeName = attributes['nativeName']
+      @callingCodes = attributes['callingCodes']
+      @topLevelDomain = attributes['topLevelDomain']
+      @alpha2Code = attributes['alpha2Code']
+      @alpha3Code = attributes['alpha3Code']
+      @currencies = attributes['currencies']
+      @languages = attributes['languages']
     end
 
     def self.find(name)
@@ -95,8 +95,11 @@ module Restcountry
       countries = get_response('all')
       countries.map { |attributes| new(attributes) }
     end
-  private
-    def self.get_response(api, action=nil)
+    
+    private
+
+    private_class_method
+    def self.get_response(api, action = nil)
       response = Faraday.get(URI.parse(URI.encode("#{API_URL}/#{api.to_s}/#{action}")))
       return response.success? ? JSON.parse(response.body) : []
     end
