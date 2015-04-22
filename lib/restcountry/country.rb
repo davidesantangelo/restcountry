@@ -91,6 +91,11 @@ module Restcountry
       countries.map { |attributes| new(attributes) }
     end
 
+    def self.find_by_countrycode(countrycode)
+      countries = get_response(nil, "alpha?codes=#{countrycode}")
+      countries.map { |attributes| new(attributes) }
+    end
+
     def self.all
       countries = get_response('all')
       countries.map { |attributes| new(attributes) }
@@ -100,7 +105,8 @@ module Restcountry
 
     private_class_method
     def self.get_response(api, action = nil)
-      response = Faraday.get(URI.parse(URI.encode("#{API_URL}/#{api.to_s}/#{action}")))
+      url = URI.parse(URI.encode("#{API_URL}#{api ? '/' + api : ''}/#{action}"))
+      response = Faraday.get(url)
       return response.success? ? JSON.parse(response.body) : []
     end
   end

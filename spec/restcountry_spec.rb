@@ -62,4 +62,11 @@ describe Restcountry do
       expect(countries.first.name).to eq('Armenia')
     end
   end
+
+  it 'get name from first country from countrycode it' do
+    VCR.use_cassette 'find_by_callingcode' do
+      countries = Restcountry::Country.find_by_countrycode('it')
+      expect(countries.first.name).to eq('Italy')
+    end
+  end
 end
