@@ -82,7 +82,6 @@ Many thanks to Fayder Florez for his implementation of the API.
 
 * [gocountries](https://github.com/alediaferia/gocountries).
 
-* 
 ## License
 The restcountry GEM is released under the MIT License.
 
