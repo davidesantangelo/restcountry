@@ -78,6 +78,10 @@ languages
 ## Credits
 Many thanks to Fayder Florez for his implementation of the API.
 
+## Related projects
+
+* [gocountries](https://github.com/alediaferia/gocountries).
+
 ## License
 The restcountry GEM is released under the MIT License.
 
