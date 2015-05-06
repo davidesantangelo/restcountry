@@ -10,6 +10,13 @@ describe Restcountry do
     end
   end
 
+  it 'expect Kabul as first capital' do
+    VCR.use_cassette 'find_by_name' do
+      result = Restcountry::Country.all
+      expect(result.first.capital).to eq('Kabul')
+    end
+  end
+
   it 'has a version number' do
     expect(Restcountry::VERSION).not_to be nil
   end

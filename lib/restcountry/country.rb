@@ -5,7 +5,7 @@ require 'uri'
 API_URL = 'https://restcountries.eu/rest/v1'
 
 module Restcountry
- 	class Country
+  class Country
     attr_reader :name,
                 :capital,
                 :altSpellings,
@@ -52,13 +52,13 @@ module Restcountry
       @languages = attributes['languages']
     end
 
-    def self.find(name)
-      countries = get_response('name', name)
+    def self.find(name, fulltext = false)
+      countries = get_response('name', name + "?fullText=#{fulltext.to_s}")
       new(countries.first) unless countries.empty?
     end
 
-    def self.find_by_name(name)
-      find(name)
+    def self.find_by_name(name, fulltext = false)
+      find(name, fulltext)
     end
 
     def self.find_by_currency(currency)
