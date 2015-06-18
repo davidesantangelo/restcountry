@@ -53,7 +53,7 @@ module Restcountry
     end
 
     def self.find(name, fulltext = false)
-      countries = get_response('name', name + "?fullText=#{fulltext.to_s}")
+      countries = get_response('name', name + "?fullText=#{fulltext}")
       new(countries.first) unless countries.empty?
     end
 
@@ -100,14 +100,14 @@ module Restcountry
       countries = get_response('all')
       countries.map { |attributes| new(attributes) }
     end
-    
+
     private
 
     private_class_method
     def self.get_response(api, action = nil)
       url = URI.parse(URI.encode("#{API_URL}#{api ? '/' + api : ''}/#{action}"))
       response = Faraday.get(url)
-      return response.success? ? JSON.parse(response.body) : []
+      response.success? ? JSON.parse(response.body) : []
     end
   end
 end

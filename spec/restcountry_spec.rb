@@ -35,6 +35,13 @@ describe Restcountry do
     end
   end
 
+  it 'get capital London from country United Kingdom' do
+    VCR.use_cassette 'find' do
+      country = Restcountry::Country.find('United Kingdom')
+      expect(country.capital).to eq('London')
+    end
+  end
+
   it 'get region Europe from country Ukraine' do
     VCR.use_cassette 'find' do
       country = Restcountry::Country.find('Ukraine')
