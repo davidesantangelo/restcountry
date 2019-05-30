@@ -59,7 +59,7 @@ describe Restcountry do
   it 'get name from first country from language it' do
     VCR.use_cassette 'find_by_lang' do
       countries = Restcountry::Country.find_by_lang('it')
-      expect(countries.first.name).to eq('Italy')
+      expect(countries.first.name).to eq('Holy See')
     end
   end
 
