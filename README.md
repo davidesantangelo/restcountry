@@ -48,7 +48,7 @@ country.name
 countries = Restcountry::Country.find_by_lang('it')
 
 countries.first
-#=> Italy
+#=> Holy See
 
 ```
 ## Attributes
