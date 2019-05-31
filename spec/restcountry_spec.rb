@@ -1,20 +1,15 @@
 require 'spec_helper'
-require 'vcr'
 
-describe Restcountry do
+describe Restcountry, :vcr do
   it 'get a response from api' do
-    VCR.use_cassette 'find_by_name' do
-      result = Restcountry::Country.all
-      expect(result).to be_kind_of(Array)
-      expect(result.first).to be_kind_of(Restcountry::Country)
-    end
+    result = Restcountry::Country.all
+    expect(result).to be_kind_of(Array)
+    expect(result.first).to be_kind_of(Restcountry::Country)
   end
 
   it 'expect Kabul as first capital' do
-    VCR.use_cassette 'find_by_name' do
-      result = Restcountry::Country.all
-      expect(result.first.capital).to eq('Kabul')
-    end
+    result = Restcountry::Country.all
+    expect(result.first.capital).to eq('Kabul')
   end
 
   it 'has a version number' do
@@ -22,65 +17,47 @@ describe Restcountry do
   end
 
   it 'get capital Rome from country Italy' do
-    VCR.use_cassette 'find' do
-   	  country = Restcountry::Country.find('Italy')
-   	  expect(country.capital).to eq('Rome')
-    end
+    country = Restcountry::Country.find('Italy')
+    expect(country.capital).to eq('Rome')
   end
 
   it 'get capital Madrid from country Spain' do
-    VCR.use_cassette 'find' do
-   	  country = Restcountry::Country.find('Spain')
-   	  expect(country.capital).to eq('Madrid')
-    end
+    country = Restcountry::Country.find('Spain')
+    expect(country.capital).to eq('Madrid')
   end
 
   it 'get capital London from country United Kingdom' do
-    VCR.use_cassette 'find' do
-      country = Restcountry::Country.find('United Kingdom')
-      expect(country.capital).to eq('London')
-    end
+    country = Restcountry::Country.find('United Kingdom')
+    expect(country.capital).to eq('London')
   end
 
   it 'get region Europe from country Ukraine' do
-    VCR.use_cassette 'find' do
-      country = Restcountry::Country.find('Ukraine')
-      expect(country.region).to eq('Europe')
-    end
+    country = Restcountry::Country.find('Ukraine')
+    expect(country.region).to eq('Europe')
   end
 
   it 'get name Estonia from capital Tallinn' do
-    VCR.use_cassette 'find_by_capital' do
-      country = Restcountry::Country.find_by_capital('Tallinn')
-      expect(country.capital).to eq('Tallinn')
-    end
+    country = Restcountry::Country.find_by_capital('Tallinn')
+    expect(country.capital).to eq('Tallinn')
   end
 
   it 'get name from first country from language it' do
-    VCR.use_cassette 'find_by_lang' do
-      countries = Restcountry::Country.find_by_lang('it')
-      expect(countries.first.name).to eq('Holy See')
-    end
+    countries = Restcountry::Country.find_by_lang('it')
+    expect(countries.first.name).to eq('Holy See')
   end
 
   it 'get name from first country from callingcode 39' do
-    VCR.use_cassette 'find_by_callingcode' do
-      countries = Restcountry::Country.find_by_callingcode('39')
-      expect(countries.first.name).to eq('Italy')
-    end
+    countries = Restcountry::Country.find_by_callingcode('39')
+    expect(countries.first.name).to eq('Italy')
   end
 
   it 'get name Armenia from first country of subregion "western asia"' do
-    VCR.use_cassette 'find_by_subregion' do
-      countries = Restcountry::Country.find_by_subregion('western asia')
-      expect(countries.first.name).to eq('Armenia')
-    end
+    countries = Restcountry::Country.find_by_subregion('western asia')
+    expect(countries.first.name).to eq('Armenia')
   end
 
   it 'get name from first country from countrycode it' do
-    VCR.use_cassette 'find_by_callingcode' do
-      countries = Restcountry::Country.find_by_countrycode('it')
-      expect(countries.first.name).to eq('Italy')
-    end
+    countries = Restcountry::Country.find_by_countrycode('it')
+    expect(countries.first.name).to eq('Italy')
   end
 end

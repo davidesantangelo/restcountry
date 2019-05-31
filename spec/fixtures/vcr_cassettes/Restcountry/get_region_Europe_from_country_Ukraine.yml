@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://restcountries.eu/rest/v2/name/Ukraine?fullText=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Fri, 31 May 2019 17:25:33 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d05ca5245059b0a9b93b451bb2a525ca41559323533; expires=Sat, 30-May-20
+        17:25:33 GMT; path=/; domain=.restcountries.eu; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Headers:
+      - Accept, X-Requested-With
+      Cache-Control:
+      - public, max-age=86400
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4dfaa5d16d933d99-MXP
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sibmFtZSI6IlVrcmFpbmUiLCJ0b3BMZXZlbERvbWFpbiI6WyIudWEiXSwiYWxwaGEyQ29kZSI6IlVBIiwiYWxwaGEzQ29kZSI6IlVLUiIsImNhbGxpbmdDb2RlcyI6WyIzODAiXSwiY2FwaXRhbCI6IktpZXYiLCJhbHRTcGVsbGluZ3MiOlsiVUEiLCJVa3JheWluYSJdLCJyZWdpb24iOiJFdXJvcGUiLCJzdWJyZWdpb24iOiJFYXN0ZXJuIEV1cm9wZSIsInBvcHVsYXRpb24iOjQyNjkyMzkzLCJsYXRsbmciOls0OS4wLDMyLjBdLCJkZW1vbnltIjoiVWtyYWluaWFuIiwiYXJlYSI6NjAzNzAwLjAsImdpbmkiOjI2LjQsInRpbWV6b25lcyI6WyJVVEMrMDI6MDAiXSwiYm9yZGVycyI6WyJCTFIiLCJIVU4iLCJNREEiLCJQT0wiLCJST1UiLCJSVVMiLCJTVksiXSwibmF0aXZlTmFtZSI6ItCj0LrRgNCw0ZfQvdCwIiwibnVtZXJpY0NvZGUiOiI4MDQiLCJjdXJyZW5jaWVzIjpbeyJjb2RlIjoiVUFIIiwibmFtZSI6IlVrcmFpbmlhbiBocnl2bmlhIiwic3ltYm9sIjoi4oK0In1dLCJsYW5ndWFnZXMiOlt7ImlzbzYzOV8xIjoidWsiLCJpc282MzlfMiI6InVrciIsIm5hbWUiOiJVa3JhaW5pYW4iLCJuYXRpdmVOYW1lIjoi0KPQutGA0LDRl9C90YHRjNC60LAifV0sInRyYW5zbGF0aW9ucyI6eyJkZSI6IlVrcmFpbmUiLCJlcyI6IlVjcmFuaWEiLCJmciI6IlVrcmFpbmUiLCJqYSI6IuOCpuOCr+ODqeOCpOODiiIsIml0IjoiVWNyYWluYSIsImJyIjoiVWNyw6JuaWEiLCJwdCI6IlVjcsOibmlhIiwibmwiOiJPZWtyYcOvbmUiLCJociI6IlVrcmFqaW5hIiwiZmEiOiLZiNqp2LHYp9uM2YYifSwiZmxhZyI6Imh0dHBzOi8vcmVzdGNvdW50cmllcy5ldS9kYXRhL3Vrci5zdmciLCJyZWdpb25hbEJsb2NzIjpbXSwiY2lvYyI6IlVLUiJ9XQ==
+    http_version: 
+  recorded_at: Fri, 31 May 2019 17:25:33 GMT
+recorded_with: VCR 5.0.0
