@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://restcountries.eu/rest/v2/name/United%20Kingdom?fullText=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Fri, 31 May 2019 17:25:32 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=ddb635bb4ef953fe2f6670e3294bbdbd01559323532; expires=Sat, 30-May-20
+        17:25:32 GMT; path=/; domain=.restcountries.eu; HttpOnly
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Headers:
+      - Accept, X-Requested-With
+      Cache-Control:
+      - public, max-age=86400
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4dfaa5cd7d4cd604-MXP
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sibmFtZSI6IlVuaXRlZCBLaW5nZG9tIG9mIEdyZWF0IEJyaXRhaW4gYW5kIE5vcnRoZXJuIElyZWxhbmQiLCJ0b3BMZXZlbERvbWFpbiI6WyIudWsiXSwiYWxwaGEyQ29kZSI6IkdCIiwiYWxwaGEzQ29kZSI6IkdCUiIsImNhbGxpbmdDb2RlcyI6WyI0NCJdLCJjYXBpdGFsIjoiTG9uZG9uIiwiYWx0U3BlbGxpbmdzIjpbIkdCIiwiVUsiLCJHcmVhdCBCcml0YWluIl0sInJlZ2lvbiI6IkV1cm9wZSIsInN1YnJlZ2lvbiI6Ik5vcnRoZXJuIEV1cm9wZSIsInBvcHVsYXRpb24iOjY1MTEwMDAwLCJsYXRsbmciOls1NC4wLC0yLjBdLCJkZW1vbnltIjoiQnJpdGlzaCIsImFyZWEiOjI0MjkwMC4wLCJnaW5pIjozNC4wLCJ0aW1lem9uZXMiOlsiVVRDLTA4OjAwIiwiVVRDLTA1OjAwIiwiVVRDLTA0OjAwIiwiVVRDLTAzOjAwIiwiVVRDLTAyOjAwIiwiVVRDIiwiVVRDKzAxOjAwIiwiVVRDKzAyOjAwIiwiVVRDKzA2OjAwIl0sImJvcmRlcnMiOlsiSVJMIl0sIm5hdGl2ZU5hbWUiOiJVbml0ZWQgS2luZ2RvbSIsIm51bWVyaWNDb2RlIjoiODI2IiwiY3VycmVuY2llcyI6W3siY29kZSI6IkdCUCIsIm5hbWUiOiJCcml0aXNoIHBvdW5kIiwic3ltYm9sIjoiwqMifV0sImxhbmd1YWdlcyI6W3siaXNvNjM5XzEiOiJlbiIsImlzbzYzOV8yIjoiZW5nIiwibmFtZSI6IkVuZ2xpc2giLCJuYXRpdmVOYW1lIjoiRW5nbGlzaCJ9XSwidHJhbnNsYXRpb25zIjp7ImRlIjoiVmVyZWluaWd0ZXMgS8O2bmlncmVpY2giLCJlcyI6IlJlaW5vIFVuaWRvIiwiZnIiOiJSb3lhdW1lLVVuaSIsImphIjoi44Kk44Ku44Oq44K5IiwiaXQiOiJSZWdubyBVbml0byIsImJyIjoiUmVpbm8gVW5pZG8iLCJwdCI6IlJlaW5vIFVuaWRvIiwibmwiOiJWZXJlbmlnZCBLb25pbmtyaWprIiwiaHIiOiJVamVkaW5qZW5vIEtyYWxqZXZzdHZvIiwiZmEiOiLYqNix24zYqtin2YbbjNin24wg2qnYqNuM2LEg2Ygg2KfbjNix2YTZhtivINi02YXYp9mE24wifSwiZmxhZyI6Imh0dHBzOi8vcmVzdGNvdW50cmllcy5ldS9kYXRhL2dici5zdmciLCJyZWdpb25hbEJsb2NzIjpbeyJhY3JvbnltIjoiRVUiLCJuYW1lIjoiRXVyb3BlYW4gVW5pb24iLCJvdGhlckFjcm9ueW1zIjpbXSwib3RoZXJOYW1lcyI6W119XSwiY2lvYyI6IkdCUiJ9XQ==
+    http_version: 
+  recorded_at: Fri, 31 May 2019 17:25:32 GMT
+recorded_with: VCR 5.0.0
