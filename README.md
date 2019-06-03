@@ -78,8 +78,10 @@ languages
 ## Credits
 Many thanks to Fayder Florez for his implementation of the API.
 
-## Related projects
+## Contributors
+<a href="https://github.com/davidesantangelo/restcountry/contributors">All Contributors</a>
 
+## Related projects
 * [gocountries](https://github.com/alediaferia/gocountries).
 
 ## License
