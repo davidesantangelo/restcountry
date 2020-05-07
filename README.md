@@ -1,6 +1,7 @@
 # Restcountry
 
-This is a sample gem to wrap REST Countries API http://restcountries.eu
+This is a [RubyGem](https://rubygems.org/gems/restcountry) wrapper library around the API provided by
+[Restcountries](https://restcountries.eu).
 
 ## Installation
 
@@ -82,7 +83,8 @@ Many thanks to Fayder Florez for his implementation of the API.
 <a href="https://github.com/davidesantangelo/restcountry/contributors">All Contributors</a>
 
 ## Related projects
-* [gocountries](https://github.com/alediaferia/gocountries).
+
+[gocountries](https://github.com/alediaferia/gocountries).
 
 ## License
 The restcountry GEM is released under the MIT License.
