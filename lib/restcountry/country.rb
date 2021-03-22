@@ -7,6 +7,7 @@ API_URL = 'https://restcountries.eu/rest/v2'
 module Restcountry
   class Country
     attr_reader :name,
+                :nativeName,
                 :capital,
                 :altSpellings,
                 :relevance,
@@ -26,10 +27,18 @@ module Restcountry
                 :alpha2Code,
                 :alpha3Code,
                 :currencies,
-                :languages
+                :languages,
+                :numericCode,
+                :flag,
+                :regionalBlocs,
+                :cioc,
+                :rawAttributes
 
     def initialize(attributes)
+      @rawAttributes = attributes
+
       @name = attributes['name']
+      @nativeName = attributes['nativeName']
       @capital = attributes['capital']
       @altSpellings = attributes['altSpellings']
       @relevance = attributes['relevance']
@@ -50,6 +59,10 @@ module Restcountry
       @alpha3Code = attributes['alpha3Code']
       @currencies = attributes['currencies']
       @languages = attributes['languages']
+      @numericCode = attributes['numericCode']
+      @flag = attributes['flag']
+      @regionalBlocs = attributes['regionalBlocs']
+      @cioc = attributes['cioc']
     end
 
     def self.find(name, fulltext = false)
